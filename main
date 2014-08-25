@@ -1,0 +1,30 @@
+float x, y, yc;
+boolean b;
+void setup() {
+  size(displayWidth, displayHeight);
+  if (frame!=null) frame.setResizable(true);
+  background(255);  
+  x=50;
+  y=height/2;
+  b=true;  
+  noStroke();
+  fill(0);
+}
+void draw() {  
+  ellipse(x, y, 3, 3);  
+  if (b) {
+    yc=-random(5, 10);
+  } else {
+    yc=random(5, 10);
+  }  
+  if ((y>=random(height-350)) || (y<=random(350))) {
+    if (b) b=false;
+    else b=true;
+  }  
+  x+=1;
+  y+=yc;  
+  if (x>=width-50) {    
+    background(255);
+    x=50;
+  }
+}
